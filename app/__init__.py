@@ -1,4 +1,5 @@
 from flask import Flask
+from flask_bootstrap import Bootstrap
 
 def create_app():
     # init the application
@@ -9,7 +10,8 @@ def create_app():
     from .main import main as main_blueprint
     app.register_blueprint(main_blueprint)
 
-
+    # init the extension blueprint
+    bootstrap = Bootstrap(app)
 
 
     return app

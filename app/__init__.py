@@ -1,5 +1,9 @@
 from flask import Flask
 from flask_bootstrap import Bootstrap
+from flask_sqlalchemy import SQLAlchemy
+
+db = SQLAlchemy()
+bootstrap = Bootstrap()
 
 def create_app():
     # init the application
@@ -11,7 +15,8 @@ def create_app():
     app.register_blueprint(main_blueprint)
 
     # init the extension blueprint
-    bootstrap = Bootstrap(app)
+    bootstrap.init_app(app)
+    db.init_app(app)
 
 
     return app

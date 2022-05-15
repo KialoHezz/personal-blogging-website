@@ -15,6 +15,7 @@ body {
   justify-content: space-between;
 }
 
+
 a {
   color: var(--font-color);
   text-decoration: none;
@@ -23,9 +24,20 @@ a {
   margin: 0 .1rem;
 }
 
-.jion a{
+.sign a{
     background-color: var(--links-color);
-    padding: 1rem;
-    margin: 2rem;
+    padding: 0.5rem;
+    margin: .2rem;
     color: #000;
+}
+
+/* index.html - profile  or body*/
+.container{
+    display: flex;
+    /* justify-content: space-between; */
+    text-align: center;
+    margin-top: 2rem;
+    height: 15rem;
+    width: 19rem;
+    background-color: white;
 }

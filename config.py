@@ -1,5 +1,7 @@
+import os
+
 class config:
-    pass
+    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://kialo:12345@localhost/persblog'
 
 class DevConfig(config):
     DEBUG = True

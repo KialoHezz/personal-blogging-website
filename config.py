@@ -1,15 +1,20 @@
 import os
 
-class config:
-    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://kialo:12345@localhost/persblog'
+class Config:
+    
+    SECRET_KEY = os.environ.get('SECRET_KEY')
+    SQLALCHEMY_TRACK_MODIFICATION = False
 
-class DevConfig(config):
+    
+
+class DevConfig(Config):
+    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://hezzy:kialo@localhost/persblog'
     DEBUG = True
 
-class ProdConfig(config):
+class ProdConfig(Config):
     pass
 
 config_options = {
-    'development': Devconfig,
+    'development': DevConfig,
     'production': ProdConfig
 }

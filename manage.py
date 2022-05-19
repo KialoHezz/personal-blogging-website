@@ -4,7 +4,7 @@ from flask_script import Manager,Server
 from  flask_migrate import Migrate, MigrateCommand
 
 # create instance
-app = create_app('development')
+app = create_app('production')
 
 # create flask-script shell
 manager = Manager(app)

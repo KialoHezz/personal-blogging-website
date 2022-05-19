@@ -1,16 +1,21 @@
 <div class="main-navbar">
-    <div class="logo">
-        <img src="" alt="logo">
-    </div>
-    <div class="main-section-links">
-        <a  class="alinks" href="">Home</a>
-        <a class="alinks" href="">About</a>
-        <a class="alinks" href="">Skills</a>
-        <a  class="alinks" href="">Insights</a>
-    </div>
-    <div class="sign">
-        <a  class="alinks" href="{{url_for('auth.login')}}">Login</a>
-        <a  href="{{url_for('auth.register')}}">Register</a>
-    </div>
-    
+  <div class="logo">
+    <img src="" alt="logo" />
+  </div>
+  <div class="main-section-links">
+    <a class="alinks" href="">Home</a>
+    <a class="alinks" href="">About</a>
+    <a class="alinks" href="">Skills</a>
+    <a class="alinks" href="">Insights</a>
+  </div>
+  <div class="sign">
+    {% if current_user.is_authenticated %}
+    <li>{{current_user.username}}</li>
+    <li><a href="{{url_for('main.profile', uname=current_user.username)}}">profile</a></li>
+    <li><a href="{{url_for('auth.logout')}}">Logout</a></li>
+    {% else %}
+    <a class="alinks" href="{{url_for('auth.login')}}">Login</a>
+    {%endif%}
+    <a href="{{url_for('auth.register')}}">Register</a>
+  </div>
 </div>

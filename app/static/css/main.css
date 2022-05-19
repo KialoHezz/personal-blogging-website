@@ -41,3 +41,9 @@ a {
     width: 19rem;
     background-color: white;
 }
+
+.align{
+  position: absolute;
+  top: 20%;
+  left: 40%;
+}

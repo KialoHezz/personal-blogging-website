@@ -19,12 +19,13 @@ class User(db.Model, UserMixin):
     id = db.Column(db.Integer,primary_key = True)
     username = db.Column(db.String(255), unique = True)
     email = db.Column(db.String(200))
-    password = db.Column(db.String(300))
-
     role_id = db.Column(db.Integer,db.ForeignKey('roles.id'))
+    bio = db.Column(db.String(255))
+    profile_pic_path = db.Column(db.String())
+    password_secure = db.Column(db.String(300))
 
     def __repr__(self):
-        return f'User {self.username} {self.email} {self.password}'
+        return f'User {self.username} {self.email} {self.password_secure}'
 
     @property
     def password(self):
@@ -32,11 +33,11 @@ class User(db.Model, UserMixin):
 
     @password.setter
     def password(self,password):
-        self.pass_secure = generate_password_hash(password)
+        self.password_secure = generate_password_hash(password)
 
 
         def verify_password(self,password):
-            return check_password_hash(self.pass_secure,password)
+            return check_password_hash(self.password_secure,password)
 
 
 class Role(db.Model, UserMixin):

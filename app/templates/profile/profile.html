@@ -1,25 +1,2 @@
 {% extends "base.html" %}
 {% block content %}
-<div class="container">
-    <div class="row">
-        <!-- display username -->
-        <div class="col-md-4">
-            <h3>{{user.username}}</h3>
-
-            <!-- display user bio -->
-            {% if user.bio %}
-            <p>{{user.bio}}</p>
-            {%else%}
-            <p>{{user.username}} has no Bio</p>
-            {%endif %}
-        </div>
-
-        <!-- display profile photo -->
-        {% if user.profile_pic_path %}
-        <img src="{{url_for('static', filename=user.profile_pic_path)}}" alt="img-thumbnail" >
-        {%else%}
-        <p>No profile picture</p>
-        {% endif %}
-    </div>
-</div>
-{% endblock %}

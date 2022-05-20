@@ -1,13 +1,13 @@
-from flask import render_template,redirect,request,url_for,abort
+from flask import render_template,redirect,request,url_for,abort,Blueprint
 from flask_login import login_required
 from ..models import User
 
 from . import main
 
 
+main = Blueprint('main', __name__)
 
 @main.route('/')
-@login_required
 def index():
     
     title = 'Personal Blog Website'
@@ -15,13 +15,22 @@ def index():
     
 
     return render_template('index.html', title=title)
+    
+
+@main.route('/about')
+def about():
+    return render_template('about.html')
 
 
-@main.route('/user/<uname>')
-def profile(uname):
-    user = User.query.filter_by(username=uname).first()
+@main.route('/profiles')
+def profile():
+    return render_template('profile/profile.html')
 
-    if user is None:
-        abort(404)
 
-    return render_template('profile/profile.html', user=user)
+@main.route('/home')
+def home():
+    
+    
+
+
+    return render_template('index.html')

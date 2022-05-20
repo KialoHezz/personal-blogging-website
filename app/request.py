@@ -1,6 +1,8 @@
 import requests
+from .models import Qoutes
+import json
 
 
-response = requests.get("https://api.open-notify.org/this-api-doesnt-exist")
+response = requests.get("http://quotes.stormconsultancy.co.uk/random.json")
 
-console.log(response.status_code)
+print(response.json())

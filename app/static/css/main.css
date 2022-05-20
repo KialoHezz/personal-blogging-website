@@ -15,35 +15,41 @@ body {
   justify-content: space-between;
 }
 
-
 a {
   color: var(--font-color);
   text-decoration: none;
   list-style-type: none;
-  padding: 0 .2rem;
-  margin: 0 .1rem;
+  padding: 0 0.2rem;
+  margin: 0 0.1rem;
 }
 
-.sign a{
-    background-color: var(--links-color);
-    padding: 0.5rem;
-    margin: .2rem;
-    color: #000;
+.sign a {
+  background-color: var(--links-color);
+  padding: 0.5rem;
+  margin: 0.2rem;
+  color: #000;
 }
 
 /* index.html - profile  or body*/
-.container{
-    display: flex;
-    /* justify-content: space-between; */
-    text-align: center;
-    margin-top: 2rem;
-    height: 15rem;
-    width: 19rem;
-    background-color: white;
+.container {
+  display: flex;
+  /* justify-content: space-between; */
+  text-align: center;
+  margin-top: 2rem;
+  height: 15rem;
+  width: 19rem;
+  background-color: white;
 }
 
-.align{
+.align {
   position: absolute;
   top: 20%;
   left: 40%;
+  border-radius: 2rem solid white; 
+}
+
+
+/* about template */
+.abouts{
+  background-color: var(--background)
 }

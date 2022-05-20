@@ -3,6 +3,8 @@ from . import db
 from werkzeug.security import generate_password_hash,check_password_hash
 from flask_login import UserMixin
 from . import login_manager
+# from datatime import datetime
+
 
 
 # callback function
@@ -23,6 +25,7 @@ class User(db.Model, UserMixin):
     bio = db.Column(db.String(255))
     profile_pic_path = db.Column(db.String())
     password_secure = db.Column(db.String(300))
+    posts = db.relationship('Post', backref='author', lazy=True)
 
     def __repr__(self):
         return f'User {self.username} {self.email} {self.password_secure}'
@@ -55,10 +58,23 @@ class Role(db.Model, UserMixin):
 class Qoutes:
     '''
     Qoutes class to define Quotes object
-    
+
     '''
     def __init__(self,id,author,quote,permalink):
         self.id = id
         self.author = author
         self.quote = quote
         self.permalink = permalink
+
+class Post(db.Model, UserMixin):
+      __tablename__ = 'posts'
+      id = db.Column(db.Integer, primary_key=True)
+      title = db.Column(db.String(100), nullable=False)
+      content = db.Column(db.Text, nullable=False)
+      category = db.Column(db.Text, nullable=False)
+    #   date_posted = db.Column(db.DateTime, nullable=False, default=datetime.utcnow)
+      user_id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)
+    #   comments = db.relationship('Comment', backref='post', lazy=True)
+
+      def __repr__(self):
+            return f"Post('{self.title}', '{self.content}', '{self.category}', '{self.date_posted}')"

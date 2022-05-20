@@ -23,19 +23,19 @@ def about():
     return render_template('about.html')
 
 
-@main.route('/profile')
-def profile():
+@main.route('/profile/<uname>')
+def profile(uname):
     if 'email' not in session:
-        return redirect(url_for('signin'))
+        return redirect(url_for('main.home'))
 
-    user = User.query.filter_by(email = session['email']).first()
+    user = User.query.filter_by(email = session['email'],username = uname).first()
 
     if user is None:
         return redirect(url_for('signin'))
     else:
         return render_template('profile.html')
 
-    return render_template('profile/profile.html')
+    return render_template('profile/profile.html', user=user)
 
 
 

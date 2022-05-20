@@ -1,6 +1,6 @@
 <div class="main-navbar">
   <div class="logo">
-    <img src="" alt="logo" />
+    <img class="img-logo" src="../static/images/572.png" alt="logo" />
   </div>
   <div class="main-section-links">
     <a class="alinks" href="{{ url_for('main.home') }}">Home</a>
@@ -8,9 +8,12 @@
     <a class="alinks" href="{{url_for('posts.addPost')}}">Posts</a>
   </div>
   <div class="sign">
+    <ul class="nav navbar-nav navbar-right">
     {% if current_user.is_authenticated %}
+    
     <li>{{current_user.username}}</li>
-    <li><a href="{{url_for('main.profile', uname=current_user.username)}}">profile</a></li>
+    <li style="color:white;padding:15px;">{{current_user.username}}</li>
+    <li><a href="{{url_for('main.profile',uname=current_user.username)}}">Profile</a></li>
     <li><a href="{{url_for('auth.logout')}}">Logout</a></li>
     {% else %}
     <a class="alinks" href="{{url_for('auth.login')}}">Login</a>

@@ -7,9 +7,15 @@
 body {
   background-color: var(--background);
   color: var(--font-color);
+  background-image: url('../images/p.jpg');
 }
 
 /* navigation */
+.img-logo{
+  width: 6rem;
+  border-radius: 19rem;
+}
+
 .main-navbar {
   display: flex;
   justify-content: space-between;

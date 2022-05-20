@@ -1,16 +1,40 @@
-PERSONAL BLOGGING
+### PERSONAL BLOGGING
 Built By Hezron Ngoma.
 
-Description
-User Stories These are the behaviours/features that the application implements for use by a user.
+### Description
 
-Open your terminal
-Copy the link to my github. Paste to your terminal. git clone "URL of the repository". Prerequisites. python3.8. pip. xclip. Running the Application. To run the application, in your terminal: $ chmod a+x start.py $ ./start.py
 
-Testing the Application
-To run the tests for the class file: $ python3.8
+User Stories
+These are the behaviours/features that the application implements for use by a user.
 
-Technologies Used
-$ Python3.8 $ Bootstrap $ CSS $ Flask $ Html
 
-License ©2022 Hezron Ngoma
+### Open your terminal
+
+Copy the link to my github.
+Paste to your terminal.
+git clone "URL of the repository".
+Prerequisites.
+python3.8.
+pip.
+xclip.
+Running the Application.
+To run the application, in your terminal:
+  $ chmod a+x start.py
+  $ ./start.py
+
+### Testing the Application
+To run the tests for the class file:
+  $ python3.8
+
+
+### Technologies Used
+  $ Python3.8
+  $ Bootstrap
+  $ CSS
+  $ Flask
+  $ Html
+  
+
+License
+  ©2022 Hezron Ngoma
+

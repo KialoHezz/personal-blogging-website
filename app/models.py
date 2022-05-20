@@ -50,3 +50,15 @@ class Role(db.Model, UserMixin):
 
     def __repr__(self):
         return f'User {self.name}'
+
+
+class Qoutes:
+    '''
+    Qoutes class to define Quotes object
+    
+    '''
+    def __init__(self,id,author,quote,permalink):
+        self.id = id
+        self.author = author
+        self.quote = quote
+        self.permalink = permalink

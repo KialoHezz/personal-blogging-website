@@ -14,7 +14,7 @@ Copy the link to my github.
 Paste to your terminal.
 git clone "URL of the repository".
 Prerequisites.
-python3.8.
+python3.8
 pip.
 xclip.
 Running the Application.
